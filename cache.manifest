@@ -1,12 +1,14 @@
 CACHE MANIFEST
-# v1.0.1
+# v1.0.0 - PlayStation Exploit Offline Cache
+
+CACHE:
 index.html
 style.css
 app.js
-sw.js
-assets/goldhen.js
 assets/psfree.js
 assets/webkit.js
+assets/goldhen.js
 assets/re.js
+
 NETWORK:
 *
