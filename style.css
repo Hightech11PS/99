@@ -1,44 +1,142 @@
-body {
-    background-color: #1a1a1a;
-    color: #ffffff;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 20px;
+:root {
+    --bg-color: #0b0e14;
+    --card-bg: #161b26;
+    --primary-blue: #00d2ff;
+    --primary-purple: #9d50bb;
+    --accent-pink: #ff007f;
+    --text-color: #ffffff;
+    --success-color: #00ff88;
 }
 
-header {
-    background-color: #333;
-    padding: 20px;
-    border-radius: 10px;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at center, #1a1f2c 0%, #080a0f 100%);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    background: rgba(22, 27, 38, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    padding: 40px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 550px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 210, 255, 0.2);
+}
+
+.ps-logo {
+    width: 100px;
+    height: auto;
+    filter: drop-shadow(0 0 10px rgba(0, 242, 254, 0.6));
+}
+
+.title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    background: linear-gradient(45deg, var(--primary-blue), var(--accent-pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 10px;
+}
+
+.subtitle {
+    font-size: 0.85rem;
+    color: #8a99ad;
     margin-bottom: 20px;
 }
 
-.buttons-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    padding: 20px;
+.ps-shapes {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    font-size: 1.5rem;
+    margin-bottom: 25px;
 }
 
-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 15px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
+.triangle { color: #00f0ff; text-shadow: 0 0 8px #00f0ff; }
+.circle { color: #ff0055; text-shadow: 0 0 8px #ff0055; }
+.cross { color: #5555ff; text-shadow: 0 0 8px #5555ff; }
+.square { color: #ff00cc; text-shadow: 0 0 8px #ff00cc; }
 
 .status-box {
-    margin-top: 20px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(0, 210, 255, 0.3);
     padding: 15px;
-    background: #444;
-    border-radius: 5px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+#status-text {
+    font-size: 0.95rem;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #0d1117;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-blue), var(--accent-pink));
+    transition: width 0.4s ease;
+}
+
+.btn-glow {
+    position: relative;
+    width: 100%;
+    padding: 18px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: linear-gradient(45deg, #00d2ff, #9d50bb, #ff007f);
+    background-size: 200% 200%;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    animation: gradientMove 4s ease infinite;
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+}
+
+.btn-glow:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(255, 0, 127, 0.6);
+}
+
+.btn-glow:active {
+    transform: translateY(1px);
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.footer {
+    margin-top: 25px;
+    font-size: 0.75rem;
+    color: #5c6b73;
 }
