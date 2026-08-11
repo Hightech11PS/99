@@ -1,0 +1,13 @@
+CACHE MANIFEST
+# v1.0.1
+index.html
+style.css
+app.js
+sw.js
+assets/goldhen.js
+assets/psfree.js
+assets/webkit.js
+assets/re.js
+
+NETWORK:
+*
