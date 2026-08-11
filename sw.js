@@ -1,29 +1,27 @@
-const CACHE_NAME = 'ps-exploit-v1';
-const ASSETS_TO_CACHE = [
+const CACHE_NAME = 'ps4-exploit-v1';
+const ASSETS = [
     './',
     './index.html',
     './style.css',
     './app.js',
-    './cache.manifest',
-    './assets/goldhen.js',
     './assets/psfree.js',
     './assets/webkit.js',
+    './assets/goldhen.js',
     './assets/re.js'
 ];
 
-self.addEventListener('install', (event) => {
-    event.waitUntil(
+self.addEventListener('install', (e) => {
+    e.waitUntil(
         caches.open(CACHE_NAME).then((cache) => {
-            console.log('[Service Worker] Caching all assets');
-            return cache.addAll(ASSETS_TO_CACHE);
+            return cache.addAll(ASSETS);
         })
     );
 });
 
-self.addEventListener('fetch', (event) => {
-    event.respondWith(
-        caches.match(event.request).then((cachedResponse) => {
-            return cachedResponse || fetch(event.request);
+self.addEventListener('fetch', (e) => {
+    e.respondWith(
+        caches.match(e.request).then((response) => {
+            return response || fetch(e.request);
         })
     );
 });
