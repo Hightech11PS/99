@@ -3,32 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HIGH TECH PS - مركز الصيانة</title>
+    <title>PS4 Exploit Host | GoldHEN & PSFree</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>HIGH TECH PS</h1>
-        <p>مركز صيانة وتعديل أجهزة البلايستيشن</p>
-    </header>
+    <div class="container">
+        <!-- PlayStation Logo -->
+        <div class="logo-wrapper">
+            <svg class="ps-logo" viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg">
+                <path d="M140.6 223c21.8 10.2 47 15.6 73.1 15.6 57 0 98.3-25.2 98.3-64.8 0-51.7-43.2-61.9-88.7-72.2-22.1-5-42.3-10-42.3-21.4 0-10.2 11.2-16.1 29.8-16.1 21.6 0 49.3 6.9 69.8 17.5l18-42.8C275.4 26 242.4 18 209.1 18c-57.5 0-94.8 28.5-94.8 67.8 0 51 45.4 61.3 90.3 71.3 22.8 5.1 40.5 10.8 40.5 21.7 0 11.4-12.8 17.6-32.9 17.6-26.6 0-56.3-8.8-78.6-20.7l-18 47.5z" fill="url(#ps-grad)"/>
+                <defs>
+                    <linearGradient id="ps-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#00f2fe" />
+                        <stop offset="100%" stop-color="#4facfe" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            <h1 class="title">PS4 EXPLOIT HOST</h1>
+            <p class="subtitle">GoldHEN + PSFree + WebKit Auto-Loader</p>
+        </div>
 
-    <main>
-        <section class="menu">
-            <h2>قائمة الخدمات والملفات</h2>
-            <div class="buttons-grid">
-                <button onclick="loadPayload('goldhen')">GoldHEN</button>
-                <button onclick="loadPayload('psfree')">PSFree</button>
-                <button onclick="loadPayload('webkit')">WebKit Exploits</button>
-                <button onclick="loadPayload('re')">Resident Evil Tools</button>
+        <!-- PlayStation Buttons Deco -->
+        <div class="ps-shapes">
+            <span class="shape triangle">&#9651;</span>
+            <span class="shape circle">&#9675;</span>
+            <span class="shape cross">&#10005;</span>
+            <span class="shape square">&#9633;</span>
+        </div>
+
+        <!-- Notification Status Box -->
+        <div id="status-box" class="status-box">
+            <span id="status-text">جاهز لتشغيل الثغرات...</span>
+            <div class="progress-bar">
+                <div id="progress-fill" class="progress-fill"></div>
             </div>
-        </section>
-        <div id="status" class="status-box">الاستعداد للتشغيل...</div>
-    </main>
+        </div>
 
-    <footer>
-        <p>فرع سموحة | فرع النبي دانيال - الإسكندرية</p>
-    </footer>
+        <!-- One Click Launch Button -->
+        <div class="action-zone">
+            <button id="btn-autolaunch" class="btn-glow" onclick="initExploitSequence()">
+                <span class="btn-text">تفعيل GoldHEN والتعديل (كبسة واحدة)</span>
+            </button>
+        </div>
 
+        <!-- Footer -->
+        <div class="footer">
+            <p>متوافق مع جميع التحديثات المدعومة | تم إعداد التخزين المؤقت للاستخدام بدون إنترنت</p>
+        </div>
+    </div>
+
+    <!-- Payload Scripts -->
+    <script src="assets/psfree.js"></script>
+    <script src="assets/webkit.js"></script>
+    <script src="assets/goldhen.js"></script>
+    <script src="assets/re.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
